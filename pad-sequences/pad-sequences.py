@@ -10,15 +10,11 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
     if not max_len:
         max_len = max([len(x) for x in seqs])
 
-    out = []
-    for x in seqs:
-        clipped = x[:max_len]
-        padded = np.pad(
-            clipped, 
-            (0, max_len - len(clipped)), 
-            constant_values=pad_value
-        )
-        out.append(padded)
-    
-    return np.array(out)
+    shape = (len(seqs), max_len)
+    out = np.full(shape, pad_value)
+
+    for i, seq in enumerate(seqs):
+        truncate_seq = seq[:max_len]
+        out[i, :len(truncate_seq)] = truncate_seq
+    return out
     
