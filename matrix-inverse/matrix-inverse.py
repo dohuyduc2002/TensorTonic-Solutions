@@ -11,7 +11,7 @@ def matrix_inverse(A):
     
     if shape[0] != shape[1]:
         return None
-    elif abs(det) < 1e-10:
+    elif abs(det) < 1e-6:
         return None
     else:
         return np.linalg.inv(A)
