@@ -13,7 +13,5 @@ def matrix_inverse(A):
         return None
     elif abs(det) < 1e-10:
         return None
-    elif A.ndim != 2:
-        return None
     else:
         return np.linalg.inv(A)
