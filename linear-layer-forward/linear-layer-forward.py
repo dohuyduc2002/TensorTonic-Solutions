@@ -7,8 +7,8 @@ def linear_layer_forward(X, W, b):
     
     rows_X = len(X) # m
     cols_X = len(X[0]) # n
-    cols_W = len(W[0]) # n
-    rows_W = len(W) # p
+    cols_W = len(W[0]) # p
+    rows_W = len(W) # n
     
     Y = [[0 for _ in range(cols_W)] for _ in range(rows_X)]
     
