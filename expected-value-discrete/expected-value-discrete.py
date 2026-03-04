@@ -1,0 +1,15 @@
+import numpy as np
+
+def expected_value_discrete(x, p):
+    """
+    Returns: float expected value
+    """
+    # Write code here
+    x = np.array(x)
+    p = np.array(p)
+
+    mean = np.sum(x * p)
+
+    if np.sum(p) != 1:
+        raise ValueError
+    return mean
