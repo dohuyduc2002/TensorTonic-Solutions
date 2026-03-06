@@ -4,11 +4,9 @@ def precision_recall_at_k(recommended, relevant, k):
     """
     # Write code here
     matched = []
-    relevent = set(relevant) # use set for O(1) 
+    relevent = set(relevant) # use set for O(1) search
 
-    for i in range(k):
-        if recommended[i] in relevant:
-            matched.append(recommended[i])
+    matched = [item for item in recommended[:k] if item in relevent] # O(k)
 
     precision = len(matched) / k
     recall = len(matched) / len(relevant)
