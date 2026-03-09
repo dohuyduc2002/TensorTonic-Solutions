@@ -18,7 +18,7 @@ def gru_cell_forward(x, h_prev, params):
     """
     # Write code here    
     params_np = {k: np.array(v) for k, v in params.items()}
-    h_prev = np.asarray(h_prev)
+    h_prev = np.array(h_prev)
     
     z = _sigmoid(np.dot(x, params_np["Wz"]) + np.dot(h_prev, params_np['Uz']) + params_np['bz'])
     r = _sigmoid(np.dot(x, params_np['Wr']) + np.dot(h_prev, params_np['Ur']) + params_np['br'])
