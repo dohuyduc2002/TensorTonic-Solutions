@@ -6,7 +6,6 @@ def swish(x):
     """
     # Write code here
     x = np.asarray(x)
-
-    sigma = 1 / (1 + np.exp(-x))
-    out = x * sigma
-    return out
+    sigmoid = 1 / (1+ np.exp(-x))
+    return x * sigmoid
+    
